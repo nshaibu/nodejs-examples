@@ -1,5 +1,5 @@
 const socketio = require('socket.io');
-const io;
+let io;
 const guestNumber = 1;
 const nickNames = {};
 const namesUsed = [];
@@ -28,7 +28,7 @@ function joinRoom(socket, room) {
 		for (let index in usersInRoom) {
 			let userSocketId = usersInRoom[index].id;
 			if (userSocketId != socket.id) {
-				if (index. > 0) {
+				if (index > 0) {
 					usersInRoomSummary + ', ';
 				}
 				usersInRoomSummary += nickNames[userSocketId];
