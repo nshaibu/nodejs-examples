@@ -1,9 +1,9 @@
 const socketio = require('socket.io');
 let io;
-const guestNumber = 1;
-const nickNames = {};
-const namesUsed = [];
-const currentRoom = {};
+let guestNumber = 1;
+let nickNames = {};
+let namesUsed = [];
+let currentRoom = {};
 
 function assignGuestName(socket, guestNumber, nickNames, namesUsed){
 	let name = 'Guest' + guestNumber;
@@ -22,7 +22,7 @@ function joinRoom(socket, room) {
 	socket.emit('joinResult', {room: room});
 	socket.broadcast.to(room).emit('message', {text: nickNames[socket.id] + ' has join room ' + room});
 
-	let usersInRoom = io.sockets.client(room);
+	let usersInRoom = io.sockets.clients(room);
 	if (usersInRoom.length > 1) {
 		let usersInRoomSummary = 'Users currently in room' + room + ':';
 		for (let index in usersInRoom) {
