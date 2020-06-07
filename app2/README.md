@@ -7,3 +7,10 @@ When starting the application, a user is automatically assigned a guest name, bu
 /join room_name  -> create/join room
 /nick nafiu -> Change your nickname
 ```
+
+#### Build And Run
+
+```
+npm install
+npm start
+```
