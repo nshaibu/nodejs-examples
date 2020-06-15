@@ -24,5 +24,8 @@ http.createServer(function (req, res) {
 				});
 			} 
 		});
+	} else {
+		res.writeHead(404, {'Content-Type': 'text/html'});
+		res.end('<h3>404 does not exist.</h3>');
 	}
 }).listen(4200, () => console.log("Server start on port 4200"));
