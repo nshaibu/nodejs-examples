@@ -1,0 +1,3 @@
+http://www.cbn.com/cbnnews/us/feed/
+http://feeds.reuters.com/Reuters/domesticNews
+http://news.yahoo.com/rss/
