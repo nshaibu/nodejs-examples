@@ -28,6 +28,7 @@ class WordCounter {
 
 	start() {
 		let counter = this;
+		
 		fs.readdir(this.fileDir, function (err, files) {
 			if (err) throw err;
 			for (let index in files) {
